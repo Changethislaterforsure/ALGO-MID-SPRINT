@@ -1,8 +1,7 @@
-/**
- * Singly-linked list of Task objects.
- */
+package algo.midsprint;
+
 public class TaskList {
-    /** Node for singly-linked list. */
+    
     private static class Node {
         Task task;
         Node next;
@@ -13,7 +12,7 @@ public class TaskList {
     private Node tail;
     private int size;
 
-    /** Add a new task with the given description to the end of the list. */
+    
     public void addTask(String description) {
         Task task = new Task(description);
         Node n = new Node(task);
@@ -26,10 +25,7 @@ public class TaskList {
         size++;
     }
 
-    /**
-     * Mark a task as completed by zero-based index.
-     * @return true if successful, false if index out of range
-     */
+   
     public boolean markTaskCompleted(int index) {
         if (index < 0 || index >= size) return false;
         Node curr = head;
@@ -38,10 +34,7 @@ public class TaskList {
         return true;
     }
 
-    /**
-     * Mark the first task whose description equalsIgnoreCase(desc) as completed.
-     * @return true if a matching task was found and marked
-     */
+   
     public boolean markTaskCompleted(String desc) {
         if (desc == null) return false;
         Node curr = head;
@@ -55,7 +48,7 @@ public class TaskList {
         return false;
     }
 
-    /** Print all tasks with their indices and completion status. */
+    
     public void printAllTasks() {
         if (head == null) {
             System.out.println("  (no tasks)");
